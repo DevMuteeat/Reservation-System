@@ -52,5 +52,11 @@ def make_reservation(Tables, reservations_file):
 make_reservation(Tables, reservations_file)
 
 def cancel_reservation(reservations):
-    
+    table_number = input("Enter table number to cancel: ")
+    if table_number in [reservations_file]:
+        del reservations [table_number]
+        print("Reservation cancelled")
 
+
+def view_resevation(reservation):
+    
