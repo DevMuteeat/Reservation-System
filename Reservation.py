@@ -17,6 +17,7 @@ def View_Tables(Tables):
 
 View_Tables(Tables)
 
+# function to make reservation
 def make_reservation(Tables, reservations_file):
     name = input("Enter your name: ")
     contact = input("Enter your contact number: ")
@@ -111,7 +112,10 @@ def modify_reservation(reservations_file):
 def daily_summary(reservations_file, date):
     with open(reservations_file,mode= 'r') as file:
         reader = csv.reader(file)
-        headers = next(reader)
+        summary = [row for row in reader if datetime.strptime(row['date'], '%Y-%m-%d') == datetime.strptime('2024-07-05', '%Y-%m-%d')]
+        print(summary)
+
+        #datetime.strptime(row['date'], '%Y-%m-%d') converts the 'date' to a datetime object
         
 
             # if new_name:
